@@ -20,8 +20,10 @@ const signup=async(res,req)=>{
         const newUser=new UserModel(userData)
         const user=await newUser.save()
 
-        const token=jwt
+        const token=jwt.sign({id:user._id},process.env.JWT_SECRET)
+        res.json({sucess:true,token,user:{name:user.name}})
     } catch (error) {
-        
+        console.log(error);
+        res.js
     }
 }
