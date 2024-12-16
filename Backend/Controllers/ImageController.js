@@ -7,10 +7,10 @@ export const generateImage=async(req,res)=>{
         const {userId,prompt}=req.body;
         const user= await UserModel.findById(userId)
         if(!user || !prompt){
-            return res.status(401).json({success:false , message:"Missing details"})
+            return res.json({success:false , message:"Missing details"})
         }
         if(user.creditBalance ===0 || user.creditBalance <0){
-            return res.status(401).json({success:false , message:"No credit Balance" , creditBalance:user.creditBalance})
+            return res.json({success:false , message:"No credit Balance" , creditBalance:user.creditBalance})
         }
         const formData=new FormData();
         formData.append('prompt',prompt)
@@ -29,7 +29,7 @@ export const generateImage=async(req,res)=>{
         res.json({success:true, message:"Image generated", creditBalance:user.creditBalance-1,resultImg})
     } catch (error) {
         console.error(error);
-        res.status(500).json({ success: false, message: error.message });
+        res.json({ success: false, message: error.message });
     }
 }
 
