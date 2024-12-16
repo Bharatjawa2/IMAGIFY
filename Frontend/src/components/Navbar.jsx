@@ -5,9 +5,8 @@ import { AppContext } from '../context/AppContext'
 
 const Navbar = () => {
 
-    const {user}=useContext(AppContext);
+    const {user,setShowLogin,logout,credit}=useContext(AppContext);
     const navigate=useNavigate();
-    const {setShowLogin}=useContext(AppContext);
   return (
     <div className='flex items-center justify-between py-4'>
     <Link to='/'>
@@ -20,14 +19,14 @@ const Navbar = () => {
             <div className='flex items-center gap-2 sm:gap-3'>
                 <button onClick={()=>navigate('/Buy')} className='flex items-center gap-2 bg-blue-100 px-4 sm:px-6 py-1.5 sm:py-3 rounded-full hover:scale-105 transition-all duration-700'>
                     <img className='w-5' src={assets.credit_star} alt=""/>
-                    <p className='text-xs sm:text-sm font-medium text-gray-600'>Credits left : 50</p>
+                    <p className='text-xs sm:text-sm font-medium text-gray-600'>Credits left : {credit}</p>
                 </button>
-                <p className='text-gray-600 max-sm:hidden pl-4'>Hi , Guest!</p>
+                <p className='text-gray-600 max-sm:hidden pl-4 mr-2'>Hi , {user.name}</p>
                 <div className='relative group'>
                     <img className='w-10 drop-shadow' src={assets.profile_icon}/>
                     <div className='absolute hidden group-hover:block top-0 right-0 z-10 rounded text-black pt-12'>
                         <ul className='list-none m-0 p-2 bg-white rounded-md border text-sm'>
-                            <li>Logout</li>
+                            <li onClick={logout}>Logout</li>
                         </ul>
                     </div>
                 </div>
