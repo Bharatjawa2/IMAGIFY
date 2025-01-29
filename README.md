@@ -15,10 +15,10 @@ Imagify is a web application built using the MERN stack (MongoDB, Express, React
 - **Payment Gateway**: Razorpay
 - **AI Model**: Clipdrop.ai
 
-<img width="440" alt="Image" src="https://github.com/user-attachments/assets/43f2f9a5-02a0-4645-bc13-23e776139439" />
-<img width="435" alt="Image" src="https://github.com/user-attachments/assets/13a33c8b-11df-4a55-ac69-1f08421b77a6" />
-<img width="428" alt="Image" src="https://github.com/user-attachments/assets/67648bc6-12e6-45de-9679-51cd0a4246ca" />
-<img width="426" alt="Image" src="https://github.com/user-attachments/assets/dd19ab67-6f3b-411d-be07-8b80ce3ccf81" />
+<img width="400" alt="Image" src="https://github.com/user-attachments/assets/43f2f9a5-02a0-4645-bc13-23e776139439" />
+<img width="400" alt="Image" src="https://github.com/user-attachments/assets/13a33c8b-11df-4a55-ac69-1f08421b77a6" />
+<img width="400" alt="Image" src="https://github.com/user-attachments/assets/67648bc6-12e6-45de-9679-51cd0a4246ca" />
+<img width="400" alt="Image" src="https://github.com/user-attachments/assets/dd19ab67-6f3b-411d-be07-8b80ce3ccf81" />
 
 ## Setup Instructions
 
@@ -31,4 +31,12 @@ Before you begin, ensure that you have the following installed:
 ### 1. Clone the repository
 ```bash
 git clone https://github.com/yourusername/Imagify.git
-cd Imagify
+
+Frontend:
+- cd Imagify
+- npm i
+- npm run dev
+
+Backend:
+- npm i
+- nodemon server.js
